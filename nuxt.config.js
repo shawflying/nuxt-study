@@ -21,10 +21,11 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    vendor: ['axios'],//避免重复打包多长
     /*
     ** Run ESLint on save
     */
-    extend (config, { isDev, isClient }) {
+    extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
