@@ -1,16 +1,11 @@
 <template>
   <section class="container">
     <div>
-      <app-logo/>
       <h1 class="title">
-        nuxt
+        admin---
       </h1>
-      <h2 class="subtitle">
-        Nuxt.js project
-      </h2>
       <div class="links">
-        <nuxt-link class="button--green" to="/login">登录</nuxt-link>
-        <nuxt-link class="button--grey" to="/xiyan">管理页面</nuxt-link>
+        <nuxt-link class="button--green" to="/">首页</nuxt-link>
         <nuxt-link class="button--grey" to="/about">关于</nuxt-link>
       </div>
     </div>
@@ -18,18 +13,21 @@
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
+import AppLogo from "~/components/AppLogo.vue";
 
 export default {
-  components: {
-    AppLogo
-  }
-}
+  validate({ params, query }) {
+    console.log("params:", params);
+    console.log("query:", query);
+    this.city_id = params.id;
+    return /^\d+$/.test(params.id);
+  },
+};
 </script>
 
 <style>
 .container {
-  min-height: 100vh;
+  min-height: 25vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,17 +35,18 @@ export default {
 }
 
 .title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
   display: block;
-  font-weight: 300;
-  font-size: 100px;
+  font-weight: 30;
+  font-size: 20px;
   color: #35495e;
   letter-spacing: 1px;
 }
 
 .subtitle {
-  font-weight: 300;
-  font-size: 42px;
+  font-weight: 30;
+  font-size: 15px;
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;
