@@ -4,6 +4,7 @@
       <h1 class="title">
         登录页面
       </h1>
+      <button @click="show()">登录</button>
       <div class="links">
         <nuxt-link class="button--green" to="/">首页</nuxt-link>
         <nuxt-link class="button--grey" to="/about">关于</nuxt-link>
@@ -14,10 +15,14 @@
 
 <script>
 import AppLogo from "~/components/AppLogo.vue";
-
 export default {
   components: {
     AppLogo
+  },
+  methods: {
+    show: () => {
+      alert("alert");
+    }
   }
 };
 </script>
