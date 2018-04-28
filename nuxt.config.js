@@ -10,8 +10,12 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css' }
+    ],
+    script: [
+      { src: 'https://cdn.bootcss.com/moment.js/2.22.1/moment.min.js' }
+    ],
   },
   /*
   ** Customize the progress bar color
@@ -38,5 +42,6 @@ module.exports = {
   },
   router: {
     middleware: 'stats'
-  }
+  },
+  plugins: ['~/plugins/vue-notifications']
 }

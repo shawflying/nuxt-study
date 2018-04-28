@@ -10,8 +10,9 @@
       </h2>
       <div class="links">
         <nuxt-link class="button--green" to="/login">登录</nuxt-link>
-        <nuxt-link class="button--grey" to="/xiyan">管理页面</nuxt-link>
+        <nuxt-link class="button--grey" to="/admin">管理页面</nuxt-link>
         <nuxt-link class="button--grey" to="/about">关于</nuxt-link>
+        <nuxt-link class="button--grey" to="/admin/1?name=abc">寻找城市</nuxt-link>
       </div>
     </div>
   </section>
