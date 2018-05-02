@@ -1,16 +1,21 @@
 <template>
-  <section class="container">
+  <div class="container">
     <div>
-      <h1 class="title">
+      <h1>
         登录页面
       </h1>
-      <button @click="show()">登录</button>
+      <div class="txtInput">
+        <input type="text" placeholder="请求输入用户名！">
+        <input type="text" placeholder="请求输入密码！">
+         <button @click="show()">登录</button>
+      </div>
+
       <div class="links">
         <nuxt-link class="button--green" to="/">首页</nuxt-link>
-        <nuxt-link class="button--grey" to="/about">关于</nuxt-link>
+        <nuxt-link class="button--grey" to="/admin">管理中心</nuxt-link>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -29,7 +34,7 @@ export default {
 
 <style>
 .container {
-  min-height: 100vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,6 +60,28 @@ export default {
 }
 
 .links {
-  padding-top: 15px;
+  margin-top: 60%;
+}
+
+.txtInput{
+  margin-top: 10%;
+}
+
+.txtInput input {
+  width: 80%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid;
+  margin-top: 20px;
+}
+
+.txtInput button {
+  width: 60%;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid;
+  margin-top: 40px;
+  background-color: cadetblue;
+  color: white;
 }
 </style>

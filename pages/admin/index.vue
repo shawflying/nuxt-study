@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <div>
-      <h1 class="title">
+      <h1>
         管理页面
       </h1>
       <div class="links">
@@ -24,7 +24,7 @@ export default {
 
 <style>
 .container {
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
