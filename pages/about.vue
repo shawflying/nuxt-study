@@ -6,6 +6,7 @@
       </h1>
        <hello class="hello_top"/>
        <project-list class="hello_top"/>
+       <img src="~static/header.jpg">
     </div>
   </section>
 </template>

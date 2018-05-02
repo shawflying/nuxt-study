@@ -15,7 +15,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "nuxt": "^1.0.0",
-    "vue-notifications": "^0.9.0"
+    "vue-notifications": "^0.9.0",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

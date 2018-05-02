@@ -2,22 +2,27 @@
   <section class="container">
     <div>
       <h1 class="title">
-        关于城市
+        关于城市:{{params.city}}<br/>
+        入参信息：{{query.name}}
       </h1>
-      <button @click="show()">登录</button>
-      <div class="links">
-        <nuxt-link class="button--green" to="/">首页</nuxt-link>
-        <nuxt-link class="button--grey" to="/about">关于</nuxt-link>
-      </div>
     </div>
   </section>
 </template>
 
 <script>
-import AppLogo from "~/components/AppLogo.vue";
+var req_params = {};
+var req_query = {};
 export default {
-  components: {
-    AppLogo
+  validate({ params, query }) {
+    console.log("params:", params);
+    console.log("query:", query);
+    req_params = params;
+    req_query = query;
+    // return /^\d+$/.test(params.id);
+    return true;
+  },
+  data: () => {
+    return { query: req_query, params: req_params };
   },
   methods: {
     show: () => {

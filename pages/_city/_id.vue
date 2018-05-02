@@ -2,19 +2,20 @@
   <section class="container">
     <div>
       <h1 class="title">
-        城市编号：{{city_id}}
+        城市页面
       </h1>
-      <button @click="show()">登录</button>
-      <div class="links">
-        <nuxt-link class="button--green" to="/">首页</nuxt-link>
-        <nuxt-link class="button--grey" to="/about">关于</nuxt-link>
-      </div>
+        城市简称:{{params.city}}<br/>
+        当前模块:{{params.id}}<br/>
+        价格信息：{{query.price}}元
+
     </div>
   </section>
 </template>
 
 <script>
 import AppLogo from "~/components/AppLogo.vue";
+var req_params = {};
+var req_query = {};
 export default {
   //校验页面入参，链接中的参数使用params.id
   //?后的参数如何取出
@@ -22,13 +23,13 @@ export default {
     // Must be a number
     console.log("params:", params);
     console.log("query:", query);
-    this.data().city_id = params.id;
-    return /^\d+$/.test(params.id);
+    req_params = params;
+    req_query = query;
+    // return /^\d+$/.test(params.id);
+    return true;
   },
-  data() {
-    return {
-      city_id: ""
-    };
+  data: () => {
+    return { query: req_query, params: req_params };
   },
   components: {
     AppLogo
