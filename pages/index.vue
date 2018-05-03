@@ -1,21 +1,19 @@
 <template>
-  <section class="container">
-    <div>
+   <div class="content">
       <app-logo/>
-      <h1 class="title">
+      <h1>
         nuxt
       </h1>
-      <h2 class="subtitle">
+      <h2>
        项目首页
       </h2>
-      <div class="links">
-        <nuxt-link class="button--green" to="/login">登录</nuxt-link>
-        <nuxt-link class="button--grey" to="/admin">管理页面</nuxt-link>
-        <nuxt-link class="button--grey" to="/about">关于</nuxt-link>
-        <nuxt-link class="button--grey" to="/city?type=home">寻找城市</nuxt-link>
+       <div class="page__bd page__bd_spacing">
+        <nuxt-link class="weui-btn weui-btn_primary" to="/login">登录</nuxt-link>
+        <nuxt-link class="weui-btn weui-btn_primary" to="/admin">管理页面</nuxt-link>
+        <nuxt-link class="weui-btn weui-btn_primary" to="/about">关于</nuxt-link>
+        <nuxt-link class="weui-btn weui-btn_primary" to="/city?type=home">寻找城市</nuxt-link>
       </div>
     </div>
-  </section>
 </template>
 
 <script>
@@ -23,9 +21,13 @@ import AppLogo from "~/components/AppLogo.vue";
 import { mapMutations } from "vuex";
 import store from "~/store";
 
-
 export default {
-  layout: 'blog',//切换布局，默认是/layouts/default.vue 
+  head() {//设置head 头部信息
+    return {
+      title: "nuxt-首页"
+    };
+  },
+  layout: "blog", //切换布局，默认是/layouts/default.vue
   components: {
     AppLogo
   }
@@ -33,33 +35,10 @@ export default {
 </script>
 
 <style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.content {
   text-align: center;
 }
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+.page__bd {
+  margin-top: 15%;
 }
 </style>

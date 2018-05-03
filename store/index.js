@@ -1,17 +1,45 @@
-import Vue from 'vue'
 import Vuex from 'vuex'
 
-Vue.use(Vuex)
-
-const store = () => new Vuex.Store({
+//todo list
+const todos = {
+  namespaced: true,//通过命名空间的方式调用
   state: {
-    count: 0
+    list: []
   },
   mutations: {
-    increment(state) {
-      state.count++
+    add(state, { text }) {
+      state.list.push({
+        id: new Date().getTime(),
+        text,
+        done: false,//状态
+        create_time: Math.round(new Date().getTime() / 1000)
+      })
+    },
+    remove(state, { todo }) {
+      state.list.splice(state.list.indexOf(todo), 1)
+    },
+    toggle(state, todo) {
+      console.log(todo)
+      todo.done = !todo.done
+      todo.update = Math.round(new Date().getTime() / 1000)
     }
   }
-})
+}
 
-export default store
+const createStore = () => {
+  return new Vuex.Store({
+    state: {
+      counter: 0
+    },
+    mutations: {
+      increment(state) {
+        state.counter++
+      }
+    },
+    modules: {
+      todos
+    }
+  })
+}
+
+export default createStore

@@ -6,15 +6,16 @@ module.exports = {
     title: 'nuxt-study',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=0' },
       { hid: 'description', name: 'description', content: 'dxl-nuxt demo' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css' }
+      { rel: 'stylesheet', href: 'https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css' },
     ],
     script: [
-      { src: 'https://cdn.bootcss.com/moment.js/2.22.1/moment.min.js' }
+      { src: 'https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js', ssr: false },
+      { src: 'https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js', ssr: false },
     ],
   },
   /*
@@ -29,7 +30,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    vendor: ['axios'],//避免重复打包多长
+    vendor: ['axios', 'moment'],//避免重复打包多长
     /*
     ** Run ESLint on save
     */
