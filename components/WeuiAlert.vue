@@ -9,10 +9,6 @@
         </div>
     </div>
     <!--end toast-->
-      <div class="links">
-        <nuxt-link class="button--green" to="/">首页</nuxt-link>
-        <nuxt-link class="button--grey" to="/admin">管理中心</nuxt-link>
-      </div>
 
           <!-- loading toast -->
     <div id="loadingToast" style="display:none;">

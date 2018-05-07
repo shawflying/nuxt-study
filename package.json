@@ -10,6 +10,8 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "analyze": "nuxt build --analyze",
+    "server": "node server.js",
     "precommit": "npm run lint"
   },
   "dependencies": {

@@ -8,10 +8,11 @@
        项目首页
       </h2>
        <div class="page__bd page__bd_spacing">
+        <nuxt-link class="weui-btn weui-btn_primary" to="/HunShaSheYing/">婚纱摄影</nuxt-link>
         <nuxt-link class="weui-btn weui-btn_primary" to="/login">登录</nuxt-link>
         <nuxt-link class="weui-btn weui-btn_primary" to="/admin">管理页面</nuxt-link>
         <nuxt-link class="weui-btn weui-btn_primary" to="/about">关于</nuxt-link>
-        <nuxt-link class="weui-btn weui-btn_primary" to="/city?type=home">寻找城市</nuxt-link>
+        <nuxt-link class="weui-btn weui-btn_primary" to="/city/index?type=home">寻找城市</nuxt-link>
       </div>
     </div>
 </template>

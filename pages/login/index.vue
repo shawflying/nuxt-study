@@ -18,6 +18,10 @@
           时间：{{time}}
          </div>
       </div>
+      <div class="links">
+        <nuxt-link class="button--green" to="/">首页</nuxt-link>
+        <nuxt-link class="button--grey" to="/admin">管理中心</nuxt-link>
+      </div>
       <weui-alert></weui-alert>
     </div>
   </div>
@@ -25,10 +29,17 @@
 
 <script>
 import AppLogo from "~/components/AppLogo.vue";
-import WeuiAlert from "~/components/WeuiAlert.vue";//公用弹出框
+import WeuiAlert from "~/components/WeuiAlert.vue"; //公用弹出框
 import axios from "axios";
 import moment from "moment";
+let base_dir = "/nuxt-study";
 export default {
+  asyncData(context) {
+    console.log("查看env:配置信息", context.base_dir); //读取不到数据
+    console.log("查看env:配置信息", context.env); //这个是有值的
+    console.log("查看baseUrl", context.baseUrl); //这个值，在初始化时，是没有的
+    base_dir = context.env.base_dir;
+  },
   head() {
     //设置头部信息
     return {
@@ -59,7 +70,8 @@ export default {
   //   console.log("------", obj);
   // }, //页面中定义中间件
   components: {
-    AppLogo,WeuiAlert
+    AppLogo,
+    WeuiAlert
   },
   data() {
     //等同于 data:()=>{}
@@ -75,7 +87,7 @@ export default {
   },
   methods: {
     login: () => {
-      $("#loadingToast").fadeIn(10);//数据加载中
+      $("#loadingToast").fadeIn(10); //数据加载中
       //TODO 如何使用vue.js 获取页面参数
       let name = $(".name").val();
       let pwd = $(".pwd").val();
@@ -93,7 +105,7 @@ export default {
             $("#toast").fadeOut(200);
           }, 2000);
           //TODO 如何进行页面跳转
-          location.href = "/admin"; //前后端代码虽然是一致的，但是有些内容是后端渲染的作用域，有些事前端渲染的作用域，不在同一个空间。
+          location.href = base_dir + "/admin"; //前后端代码虽然是一致的，但是有些内容是后端渲染的作用域，有些事前端渲染的作用域，不在同一个空间。
           //在js中控制跳转页面，就使用原生的href就好了，vue-router也是基于此拓展的。
         });
     }
@@ -154,7 +166,7 @@ export default {
   color: white;
 }
 
-.result{
+.result {
   text-align: left;
   margin-top: 20px;
 }

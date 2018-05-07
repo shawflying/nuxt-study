@@ -2,7 +2,7 @@
   <div>
     <p>
       <button @click="increment">{{ counter }}</button><br>
-      <nuxt-link to="/demo/about">About</nuxt-link>
+      <nuxt-link to="/vuex/about">About</nuxt-link>
     </p>
   </div>
 </template>

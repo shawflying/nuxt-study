@@ -7,10 +7,10 @@
         {{a}}
       </h1>
       <div class="city-list">
-        <nuxt-link class="mycity" to="/bj/about?name=abc">关于北京</nuxt-link><br/>
-        <nuxt-link class="mycity" to="/sh/about?name=abc">关于上海</nuxt-link><br/>
-        <nuxt-link class="mycity" to="/sh/jiudian?price=998">上海酒店</nuxt-link><br/>
-        <nuxt-link class="mycity" to="/sh/hunche?price=1002">上海婚车模块</nuxt-link><br/>
+        <nuxt-link class="mycity" to="/city/bj/about?name=abc">关于北京</nuxt-link><br/>
+        <nuxt-link class="mycity" to="/city/sh/about?name=abc">关于上海</nuxt-link><br/>
+        <nuxt-link class="mycity" to="/city/sh/jiudian?price=998">上海酒店</nuxt-link><br/>
+        <nuxt-link class="mycity" to="/city/sh/hunche?price=1002">上海婚车模块</nuxt-link><br/>
       </div>
       <div class="links">
         <nuxt-link class="button--green" to="/">首页</nuxt-link>
