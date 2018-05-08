@@ -1,4 +1,5 @@
 const axios = require('axios')
+const routes = require('./routes')//展示未找到合适使用方式
 module.exports = {
   /*
   ** Headers of the page
@@ -51,8 +52,9 @@ module.exports = {
     base_dir: '/nuxt-study'
   },
   router: {
-    middleware: 'stats',
+    middleware: 'routes',
     base: '/nuxt-study/',//router 属性让你可以个性化配置 Nuxt.js 应用的路由（vue-router）。
+    routes: routes
   },
   plugins: ['~/plugins/vue-notifications'],//, '~/plugins/filters.js'
   //静态生成文件生成器配置

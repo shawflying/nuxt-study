@@ -23,7 +23,9 @@ import { mapMutations } from "vuex";
 import store from "~/store";
 
 export default {
-  head() {//设置head 头部信息
+  name: "home",
+  head() {
+    //设置head 头部信息
     return {
       title: "nuxt-首页"
     };

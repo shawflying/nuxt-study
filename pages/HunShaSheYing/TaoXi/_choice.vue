@@ -1,5 +1,5 @@
 <template>
-   <pin-pai v-bind:msg_choice="choice" v-bind:msg_type="'PinPai'"></pin-pai>
+   <pin-pai v-bind:msg_choice="choice" v-bind:msg_type="'TaoXi'"></pin-pai>
 </template>
 
 <script>
@@ -9,7 +9,7 @@ let choice = "";
 export default {
   validate(req) {
     choice = req.params.choice || "";
-     return req.params.choice.indexOf("-info") == -1;
+    return true;
   },
   data: () => {
     return { choice: choice };

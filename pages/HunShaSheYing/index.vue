@@ -1,40 +1,21 @@
 <template>
-  <section class="container">
-    <div>
-      <h1 class="title">
-        到喜啦 > 上海婚纱摄影:<br/>
-      </h1>
-      <div>
-          <pin-pai></pin-pai>
-      </div>
-
-    </div>
-  </section>
+   <pin-pai v-bind:msg_choice="choice" v-bind:msg_type="'PinPai'"></pin-pai>
 </template>
 
 <script>
 import PinPai from "~/components/Hssy/PinPai.vue"; //品牌模板
-import pinpai_js from "~/pages/HunShaSheYing/PinPai/pinpai.js"; //品牌模板
-import pinpai_css from "~/pages/HunShaSheYing/PinPai/pinpai.css"; //样式
 
-let req_data = {};
+let choice = "";
 export default {
-  validate({ params, query }) {
-    console.log("params:", params);
-    console.log("query:", query);
-    req_params = params;
-    req_query = query;
+  validate(req) {
+    choice = req.params.choice || "";
     return true;
   },
-  head: pinpai_js.head,
   data: () => {
-    return { title: "", data: req_data };
+    return { choice: choice };
   },
   components: {
     PinPai
-  },
-  methods: {
-    show: () => {}
   }
 };
 </script>
