@@ -13,6 +13,7 @@
         <nuxt-link class="weui-btn weui-btn_primary" to="/admin">管理页面</nuxt-link>
         <nuxt-link class="weui-btn weui-btn_primary" to="/about">关于</nuxt-link>
         <nuxt-link class="weui-btn weui-btn_primary" to="/city/index?type=home">寻找城市</nuxt-link>
+        <button class="weui-btn weui-btn_primary" @click="turnUrl()">点击跳转</button>
       </div>
     </div>
 </template>
@@ -33,6 +34,13 @@ export default {
   layout: "blog", //切换布局，默认是/layouts/default.vue
   components: {
     AppLogo
+  },
+  methods: {
+    turnUrl() {
+      console.log("111111111111");
+      console.log(this.$router);
+      this.$router.push({ path: "/about" }); //跳转
+    }
   }
 };
 </script>

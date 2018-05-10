@@ -87,8 +87,8 @@ var getChoiceParams = function (choice, choice_list, msg_type) {
             }
           });
         }
-        if (name == item.name) {
-        } else {
+        //判断及设置访问路径
+        if (name != item.name) {
           item.list[b].path +=
             (list == "" ? "" : item.list[b].path == "" ? "" : "-") + n;
         }

@@ -12,6 +12,7 @@ export default {
     detail = req.query || {};
     from = req.params.detail;
     return req.params.detail.indexOf("-info") > -1;
+    // return true;
   },
   data: () => {
     return { detail, from };

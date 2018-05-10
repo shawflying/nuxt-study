@@ -1,10 +1,11 @@
 const axios = require('axios')
-const routes = require('./routes')//展示未找到合适使用方式
+const { routes_list } = require('./routes')//展示未找到合适使用方式
 module.exports = {
   /*
   ** Headers of the page
   */
   head: {
+    title: '到喜啦',
     titleTemplate: '%s | 到喜啦官方网站',//我们使用 titleTemplate 字段 title 变量指定文章题目，在渲染之前用title变量值替换掉%s这个占位，填充到titleTemplate 。
     // title: 'nuxt-study',
     meta: [
@@ -54,7 +55,21 @@ module.exports = {
   router: {
     middleware: 'routes',
     base: '/nuxt-study/',//router 属性让你可以个性化配置 Nuxt.js 应用的路由（vue-router）。
-    routes: routes
+    extendRoutes(routes) {
+      routes_list.filter(a => {
+        return a.level == 'high'
+      }).forEach(function (m, i) {
+        for (let i = 0; i < routes.length; i++) {
+          if (routes[i].name == m.name) {//根据名称，进行替换component:,只替换已经存在的
+            routes[i].component = m.component;
+          }
+        }
+      });
+      routes_list.forEach(function (m, i) {
+        delete m.level
+        routes.push(m)
+      });
+    }
   },
   plugins: ['~/plugins/vue-notifications'],//, '~/plugins/filters.js'
   //静态生成文件生成器配置

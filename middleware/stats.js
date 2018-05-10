@@ -6,7 +6,7 @@ export default function (context) {
   for (let m in context) {
     console.log(m)
   }
-  console.log(context.req.headers)
+  // console.log(context.req.headers)
   // console.log(context.res)
   // console.log(context.query)
   // console.log(context.params)

@@ -1,11 +1,11 @@
-export default function ({ isServer, route, redirect, req }) {
+export default function ({route, redirect, req }) {
   let system = {
     windows: false,
     macOS: false,
     linux: false
   };
   let userAgent, isPC;
-  if (isServer) {
+  if (process.server) {
     userAgent = req.headers['user-agent'].toLowerCase();
   } else {
     userAgent = window.navigator.userAgent.toLowerCase();
