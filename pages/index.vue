@@ -14,6 +14,7 @@
         <nuxt-link class="weui-btn weui-btn_primary" to="/about">关于</nuxt-link>
         <nuxt-link class="weui-btn weui-btn_primary" to="/city/index?type=home">寻找城市</nuxt-link>
         <button class="weui-btn weui-btn_primary" @click="turnUrl()">点击跳转</button>
+        <a href="http://127.0.0.1:3000/nuxt-study/login" class="weui-btn weui-btn_primary">login ...</a>
       </div>
     </div>
 </template>
