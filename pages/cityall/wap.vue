@@ -28,7 +28,7 @@
 </template>
 
 <script>
-let dxl_conf = require("dxl-conf");
+let dxl_conf = [];// require("dxl-conf");
 export default {
   head: {
     title: "到喜啦",

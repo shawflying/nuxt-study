@@ -23,13 +23,15 @@
 import AppLogo from "~/components/AppLogo.vue";
 import { mapMutations } from "vuex";
 import store from "~/store";
+import config from "~/config";
+console.log("---->", config.name);
 
 export default {
   name: "home",
   head() {
     //设置head 头部信息
     return {
-      title: "nuxt-首页"
+      title: config.name + "_nuxt-首页"
     };
   },
   layout: "blog", //切换布局，默认是/layouts/default.vue

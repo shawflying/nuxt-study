@@ -40,7 +40,7 @@ location /nuxt-study{
 
 nuxt.config.js
 
-```
+```json
 {
     head:{
         link:{
