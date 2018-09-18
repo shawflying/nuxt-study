@@ -1,4 +1,4 @@
 module.exports = {
-  city: {},
+  city: require("./city.js"),
   name: 'tingo'
 }
